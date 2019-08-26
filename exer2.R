@@ -18,6 +18,6 @@ dado <- function(){
 dado()
 
 dado2 <- function(){
-  sample(6, size = 2, replace = FALSE, prob = NULL)
+  sample(6, size = 2, replace = TRUE, prob = NULL)
 }
 dado2
