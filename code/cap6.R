@@ -44,6 +44,7 @@ for (i in 1:length(notas$aprovado)){
 
 sum(notas$aprovado == 1)
 """
+#Vetor ao cubo
 x <- 1:700
 
 for (i in 1:length(x)){
@@ -51,6 +52,7 @@ for (i in 1:length(x)){
 }
 print(x)
 
+#n de letras no nome da coluna
 y <- colnames(iris)
 z <- 0
 
@@ -58,8 +60,9 @@ for (i in 1:length(y)){
   z[i] <- (paste0(y[i], "(", nchar(y[i]), ")"))
 }
 
-i <- 0
+#Erro Padrao
 
+i <- 0
 while (i <= 1){
   x <- rnorm(100, sd = 8)
   i <- sd(x)/sqrt(length(x))
@@ -69,6 +72,7 @@ while (i <= 1){
   print(i)
 }
 
+#Par ou Impar
 sequencia <- 1:10
 par <- 0
 impar <- 0
@@ -93,6 +97,7 @@ for (i in 1:length(sequencia)){
   }
 }
 
+#Cara ou Koroa
 i <- 0
 ck <- rep(NA, 10)
 
@@ -108,18 +113,24 @@ sum(ck == "KOROA")
 sum(ck == "CARA")
 
 
+multiplicacao_m <- function(m1, m2){
+  if(dim(m1)[1] != dim(m2)[2]){
+    print("matrizes nao compativeis!")
+  }else{
+    mr <- matrix(0, nrow = dim(m1)[1], ncol = dim(m2)[2])
+    for (i in 1:dim(m1)[1]){
+      n = 1
+      for (j in 1:dim(m2)[2]){
+        mr[i,n] <- sum(m1[i,]*m2[,j])
+        n <- n+1
+      }
+    }
+    return(mr)
+  }
+}
 
 
+matriz1 <- matrix(c(1:12), nrow = 4, ncol = 3)
+matriz2 <- matrix(c(10:22), nrow = 3, ncol = 4)
 
-
-
-
-
-
-
-
-
-
-
-
-
+multiplicacao_m(matriz1, matriz2)
